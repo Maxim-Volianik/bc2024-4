@@ -13,9 +13,9 @@ program.parse(process.argv);
 
 const options = program.opts();
 
-// Перевірка на існування кеш-директорії
-if (!fs.existsSync(options.cache)) {
-  console.error(`Error: Cache directory ${options.cache} does not exist.`);
+if (!options.host || !options.port || !options.cache) {
+  console.error('Error: All required options must be specified.');
+  program.help(); // Виведе допомогу та завершить програму
   process.exit(1);
 }
 
