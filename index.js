@@ -13,6 +13,7 @@ program.parse(process.argv);
 
 const options = program.opts();
 
+// Перевірка обов'язкових параметрів
 if (!options.host || !options.port || !options.cache) {
   console.error('Error: All required options must be specified.');
   program.help(); // Виведе допомогу та завершить програму
